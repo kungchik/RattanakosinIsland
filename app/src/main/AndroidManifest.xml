@@ -18,8 +18,11 @@
         </activity>
         <activity android:name=".Tour" />
         <activity android:name=".Food" />
-        <activity android:name=".Detail">
-        </activity>
+        <activity android:name=".Detail"></activity>
+        <activity
+            android:name=".Foodtry"
+            android:label="@string/title_activity_foodtry"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

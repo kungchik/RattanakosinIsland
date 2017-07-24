@@ -5,6 +5,13 @@
     <string name="tour">สถานที่ท่องเที่ยวเชิงวัฒนธรรม</string>
     <string name="food">ร้านอาหารขึ้นชื่อรอบเกาะรัตนโกสินทร์</string>
     <string name="back">Back</string>
+    <string name="Home">home</string>
     <string name="watparkaw">วัดพระศรีรัตนศาสดาราม (วัดพระแก้ว)</string>
     <string name="watpho">วัดพระเชตุพนวิมลมังคลราม (วัดโพธิ์)</string>
+    <string name="foodbar">ร้านอาหารขึ้นชื่อบริเวณนี้</string>
+    <string name="eat">ประเภพของคาว</string>
+    <string name="candy">ประเภทของหวาน</string>
+    <string name="title_activity_foodtry">Restaurant</string>
+    <string name="action_settings">ตั้งค่า</string>
+    <string name="section_format">ประเภทของอาหาร</string>
 </resources>

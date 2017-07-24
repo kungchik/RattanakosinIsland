@@ -43,7 +43,7 @@
         android:layout_width="0dp"
         android:layout_height="200dp"
         android:layout_marginTop="8dp"
-        android:backgroundTint="@android:color/holo_blue_dark"
+        android:backgroundTint="@android:color/holo_orange_dark"
         android:onClick="onClickFood"
         android:scaleType="centerInside"
         app:layout_constraintHorizontal_bias="0.0"
@@ -54,19 +54,20 @@
 
     <ImageButton
         android:id="@+id/imageButton5"
-        android:layout_width="87dp"
-        android:layout_height="59dp"
+        android:layout_width="@dimen/iconn"
+        android:layout_height="@dimen/icon"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="0dp"
         android:background="@null"
+        android:onClick="onClickHome"
         android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:srcCompat="@drawable/nearby"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="@+id/textView3"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
-        android:layout_marginBottom="5dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@+id/textView3"
         app:layout_constraintTop_toTopOf="@+id/textView3"
-        android:layout_marginTop="0dp" />
+        app:srcCompat="@drawable/home1" />
 
 </android.support.constraint.ConstraintLayout>
