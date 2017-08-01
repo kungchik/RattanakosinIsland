@@ -48,7 +48,7 @@ public class MyAdapter extends BaseAdapter{
         View view = layoutInflater.inflate(R.layout.my_listview,parent,false);
 
         //Initial View
-        ImageView imageView = (ImageView) view.findViewById(R.id.imvIcon);
+        ImageView imageView = (ImageView) view.findViewById(R.id.imvIconfood);
         TextView titleTextView = (TextView) view.findViewById(R.id.txtTitleTour);
         TextView DetailTextView = (TextView) view.findViewById(R.id.txtDetailTour);
 

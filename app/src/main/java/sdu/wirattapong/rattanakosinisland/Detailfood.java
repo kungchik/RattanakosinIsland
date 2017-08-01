@@ -16,7 +16,7 @@ public class Detailfood extends AppCompatActivity {
         //Initial View
         TextView titleTextView = (TextView) findViewById(R.id.txtTitleDetail);
         TextView DetailTextView = (TextView) findViewById(R.id.txtDetailScroll);
-        ImageView imageView = (ImageView) findViewById(R.id.imvDetail);
+        ImageView imageView = (ImageView) findViewById(R.id.imvDetailfood);
 
 
         //รับข้อมูลจาก Main Activity มาแสดงผลบน Detail
@@ -32,10 +32,7 @@ public class Detailfood extends AppCompatActivity {
         finish();
     }
     public void onClickHome (View view){
-        finish();}
-    public void onClickFood (View view){
-        Intent intent = new Intent(Detailfood.this, Food.class);
-        startActivity(intent);
-    }
+        Intent intent = new Intent(Detailfood.this, MainActivity.class);
+        startActivity(intent);}
 }
 

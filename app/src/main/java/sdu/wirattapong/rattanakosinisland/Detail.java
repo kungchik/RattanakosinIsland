@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,7 +16,7 @@ public class Detail extends AppCompatActivity {
         //Initial View
         TextView titleTextView = (TextView) findViewById(R.id.txtTitleDetail);
         TextView DetailTextView = (TextView) findViewById(R.id.txtDetailScroll);
-        ImageView imageView = (ImageView) findViewById(R.id.imvDetail);
+        ImageView imageView = (ImageView) findViewById(R.id.imvDetailfood);
 
 
         //รับข้อมูลจาก Main Activity มาแสดงผลบน Detail

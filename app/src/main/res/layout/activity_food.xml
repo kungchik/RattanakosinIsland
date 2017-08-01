@@ -7,65 +7,6 @@
     android:background="@android:color/darker_gray"
     tools:context="sdu.wirattapong.rattanakosinisland.Food">
 
-    <ListView
-        android:id="@+id/allFood"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton18"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ImageButton
-        android:id="@+id/imageButton19"
-        android:layout_width="80dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="5dp"
-        android:layout_marginRight="8dp"
-        android:background="@null"
-        android:scaleType="centerInside"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:srcCompat="@drawable/images1"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginEnd="8dp" />
-
-    <ImageButton
-        android:id="@+id/imageButton17"
-        android:layout_width="80dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="5dp"
-        android:background="@null"
-        android:onClick="onClickHome"
-        android:scaleType="centerInside"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:srcCompat="@drawable/home1"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginStart="8dp" />
-
-    <ImageButton
-        android:id="@+id/imageButton18"
-        android:layout_width="80dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="8dp"
-        android:background="@null"
-        android:onClick="onClickBack"
-        android:scaleType="centerInside"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/imageButton17"
-        app:srcCompat="@drawable/back"
-        app:layout_constraintRight_toLeftOf="@+id/imageButton19"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp" />
-
     <TextView
         android:id="@+id/textView4"
         android:layout_width="367dp"
@@ -80,5 +21,54 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
+        android:id="@+id/allFood"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:background="#7fffffff"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton9"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <ImageButton
+        android:id="@+id/imageButton9"
+        android:layout_width="@dimen/iconn"
+        android:layout_height="@dimen/icon"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="0dp"
+        android:background="@null"
+        android:onClick="onClickBack"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/imageButton3"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView3"
+        app:srcCompat="@drawable/back" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="@dimen/iconn"
+        android:layout_height="@dimen/icon"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="75dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="0dp"
+        android:background="@null"
+        android:onClick="onClickHome"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@+id/textView3"
+        app:layout_constraintTop_toTopOf="@+id/textView3"
+        app:srcCompat="@drawable/home1" />
 
 </android.support.constraint.ConstraintLayout>

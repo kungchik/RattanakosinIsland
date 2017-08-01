@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickFood (View view){
-        Intent intent = new Intent(MainActivity.this, Food.class);
+        Intent intent = new Intent(MainActivity.this, Foodtry.class);
         startActivity(intent);
     }
     public void onClickHome (View view){

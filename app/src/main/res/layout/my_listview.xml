@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imvIcon"
+        android:id="@+id/imvIconfood"
         android:layout_width="201dp"
         android:layout_height="116dp"
         app:srcCompat="@drawable/img1"
@@ -20,7 +20,7 @@
         android:orientation="vertical"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/imvIcon">
+        app:layout_constraintLeft_toRightOf="@+id/imvIconfood">
 
         <TextView
             android:id="@+id/txtTitleTour"

@@ -12,14 +12,14 @@ import android.widget.TextView;
  * Created by SuPerJoWTF on 25/3/2560.
  */
 
-public class MyAdapter1 extends BaseAdapter{
+public class MyAdapterfood extends BaseAdapter{
 
     //Explicit
     private Context context;
     private int[] ints;
     private String[] titleStrings, detailStrings;
 
-    public MyAdapter1(Context context, int[] ints, String[] titleStrings, String[] detailStrings) {
+    public MyAdapterfood(Context context, int[] ints, String[] titleStrings, String[] detailStrings) {
         this.context = context;
         this.ints = ints;
         this.titleStrings = titleStrings;
@@ -45,14 +45,14 @@ public class MyAdapter1 extends BaseAdapter{
     public View getView(int position, View convertView, ViewGroup parent) {
 
         LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = layoutInflater.inflate(R.layout.my_listview_food,parent,false);
+        View view = layoutInflater.inflate(R.layout.my_listviewfood,parent,false);
 
         //Initial View
-        ImageView imageView = (ImageView) view.findViewById(R.id.imvIcon);
-        TextView titleTextView = (TextView) view.findViewById(R.id.txtTitleFood);
-        TextView DetailTextView = (TextView) view.findViewById(R.id.txtDetailFood);
+        ImageView imageView = (ImageView) view.findViewById(R.id.imvIconfood);
+        TextView titleTextView = (TextView) view.findViewById(R.id.txtTitlefood);
+        TextView DetailTextView = (TextView) view.findViewById(R.id.txtDetailfood);
 
-        //Show View นำข้อมูลไปแสดงผลบนหน้าเว็บ
+        //Show View นำข้อมูลไปแสดงผลบนหน้า
         imageView.setImageResource(ints[position]);
         titleTextView.setText(titleStrings[position]);
         DetailTextView.setText(detailStrings[position]);

@@ -1,5 +1,6 @@
 package sdu.wirattapong.rattanakosinisland;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -40,5 +41,7 @@ public  class Foodtry2 extends Fragment {
         TextView textView = (TextView) rootView.findViewById(R.id.section_label);
         textView.setText(getString(R.string.candy, getArguments().getInt(ARG_SECTION_NUMBER)));
         return rootView;
+
     }
+
 }
