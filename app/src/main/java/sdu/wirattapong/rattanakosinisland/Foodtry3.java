@@ -12,10 +12,10 @@ import android.view.ViewGroup;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Foodtry2 extends Fragment {
+public class Foodtry3 extends Fragment {
 
 
-    public Foodtry2() {
+    public Foodtry3() {
         // Required empty public constructor
     }
 
@@ -24,6 +24,7 @@ public class Foodtry2 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_foodtry2, container, false);
+        return inflater.inflate(R.layout.fragment_foodtry3, container, false);
     }
+
 }

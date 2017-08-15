@@ -8,27 +8,28 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 /**
  * Created by SuPerJoWTF on 25/3/2560.
  */
 
 public class MyAdapter extends BaseAdapter{
 
+    private Context objcontextcake;
+    private String[] name,detel,image;
     //Explicit
-    private Context context;
-    private int[] ints;
-    private String[] titleStrings, detailStrings;
+    public MyAdapter(Context context,String[] name, String[] detel, String[] image) {
+        this.objcontextcake = context;
+        this.name = name;
+        this.detel = detel;
+        this.image = image;
 
-    public MyAdapter(Context context, int[] ints, String[] titleStrings, String[] detailStrings) {
-        this.context = context;
-        this.ints = ints;
-        this.titleStrings = titleStrings;
-        this.detailStrings = detailStrings;
+
     }
 
     @Override
-    public int getCount() {
-        return ints.length;
+    public int getCount() {return name.length;
     }
 
     @Override
@@ -43,22 +44,16 @@ public class MyAdapter extends BaseAdapter{
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        LayoutInflater objLayoutInflater = (LayoutInflater) objcontextcake.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View view = objLayoutInflater.inflate(R.layout.my_listview,parent,false);
 
-        LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = layoutInflater.inflate(R.layout.my_listview,parent,false);
+        TextView TravelTextView = (TextView) view.findViewById(R.id.txtTitleTour);
+        TextView Traveldetel = (TextView) view.findViewById(R.id.txtDetailTour);
+        ImageView TravelImage = (ImageView) view.findViewById(R.id.imvIconTravel);
 
-        //Initial View
-        ImageView imageView = (ImageView) view.findViewById(R.id.imvIconfood);
-        TextView titleTextView = (TextView) view.findViewById(R.id.txtTitleTour);
-        TextView DetailTextView = (TextView) view.findViewById(R.id.txtDetailTour);
-
-        //Show View นำข้อมูลไปแสดงผลบนหน้าเว็บ
-        imageView.setImageResource(ints[position]);
-        titleTextView.setText(titleStrings[position]);
-        DetailTextView.setText(detailStrings[position]);
-
-
-
+        Picasso.with(objcontextcake).load(image[position]).into(TravelImage);
+        TravelTextView.setText(name[position]);
+        Traveldetel.setText(detel[position]);
         return view;
     }
 }

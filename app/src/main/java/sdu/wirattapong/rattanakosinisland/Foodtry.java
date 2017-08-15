@@ -1,6 +1,7 @@
 package sdu.wirattapong.rattanakosinisland;
 
 import android.content.Intent;
+import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -51,6 +52,8 @@ public class Foodtry extends AppCompatActivity {
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout.setupWithViewPager(mViewPager);
 
 
     }
@@ -97,14 +100,12 @@ public class Foodtry extends AppCompatActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            switch (position){
-                case 0:
-                    return PlaceholderFragment.newInstance(position + 1);
-
-                case 1:
-                    return Foodtry2.newInstance(position + 1);
-            }
-            return null;
+           switch (position){
+               case 0:
+                   return new Foodtry2();
+               default:
+                   return new Foodtry3();
+           }
         }
 
         @Override
@@ -117,17 +118,14 @@ public class Foodtry extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "SECTION 1";
+                    return "อาหาร";
                 case 1:
-                    return "SECTION 2";
+                    return "ขนมหวาน";
             }
             return null;
         }
     }
-    public void onClickBack(View view) {
-        finish();
-    }
-    public void onClickHome (View view){
-        Intent intent = new Intent(Foodtry.this, MainActivity.class);
+    public void onClickBack (View view) {finish();}
+    public void onClickHome (View view){Intent intent = new Intent(Foodtry.this, MainActivity.class);
         startActivity(intent);}
 }

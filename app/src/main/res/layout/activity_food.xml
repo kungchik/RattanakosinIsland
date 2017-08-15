@@ -4,15 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/darker_gray"
+    android:background="@drawable/gold"
     tools:context="sdu.wirattapong.rattanakosinisland.Food">
 
     <TextView
+        android:id="@+id/textView8"
+        android:layout_width="388dp"
+        android:layout_height="70dp"
+        android:background="@drawable/wood"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
         android:id="@+id/textView4"
-        android:layout_width="367dp"
+        android:layout_width="0dp"
         android:layout_height="36dp"
         android:layout_marginTop="10dp"
-        android:background="#504040"
+        android:background="@drawable/wood"
         android:text="@string/foodbar"
         android:textAlignment="center"
         android:textColor="@android:color/background_light"
@@ -35,40 +44,39 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
 
     <ImageButton
         android:id="@+id/imageButton9"
-        android:layout_width="@dimen/iconn"
-        android:layout_height="@dimen/icon"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
         android:layout_marginBottom="5dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="0dp"
         android:background="@null"
         android:onClick="onClickBack"
         android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/imageButton3"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView3"
-        app:srcCompat="@drawable/back" />
+        app:srcCompat="@drawable/back"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
 
     <ImageButton
         android:id="@+id/imageButton3"
-        android:layout_width="@dimen/iconn"
-        android:layout_height="@dimen/icon"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
         android:layout_marginBottom="5dp"
         android:layout_marginLeft="75dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="0dp"
         android:background="@null"
         android:onClick="onClickHome"
         android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="@+id/textView3"
-        app:layout_constraintTop_toTopOf="@+id/textView3"
-        app:srcCompat="@drawable/home1" />
+        app:srcCompat="@drawable/home1"
+        android:layout_marginStart="75dp" />
 
 </android.support.constraint.ConstraintLayout>
