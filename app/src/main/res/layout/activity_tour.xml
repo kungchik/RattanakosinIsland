@@ -48,32 +48,32 @@
 
     <ImageButton
         android:id="@+id/imvbtn"
+        style="@android:style/Widget.Holo.Light.ImageButton"
         android:layout_width="80dp"
         android:layout_height="60dp"
         android:layout_marginBottom="5dp"
         android:layout_marginLeft="75dp"
-        android:background="@null"
+        android:layout_marginStart="75dp"
         android:onClick="onClickHome"
         android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:srcCompat="@drawable/home1"
-        android:layout_marginStart="75dp" />
+        app:srcCompat="@drawable/home1" />
 
     <ImageButton
         android:id="@+id/imageButton7"
+        style="@android:style/Widget.Holo.Light.ImageButton"
         android:layout_width="80dp"
         android:layout_height="60dp"
         android:layout_marginBottom="5dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:background="@null"
+        android:layout_marginStart="8dp"
         android:onClick="onClickBack"
         android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/imvbtn"
         app:layout_constraintRight_toRightOf="parent"
-        app:srcCompat="@drawable/back"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp" />
+        app:srcCompat="@drawable/back" />
 </android.support.constraint.ConstraintLayout>
