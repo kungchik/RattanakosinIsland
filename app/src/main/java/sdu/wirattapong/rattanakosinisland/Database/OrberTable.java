@@ -28,16 +28,15 @@ import android.database.sqlite.SQLiteDatabase;
         readSqLiteDatabase = objMySQLiteOpenHelper.getReadableDatabase();
     }
 
-    public long AddNewOrderTable(String order_ID, String order_MENU, String or_Detel,String or_Long,String or_Lat,String or_Image,String or_price) {
+    public long AddNewOrderTable(String or_name,String or_detel) {
         ContentValues objContentValues = new ContentValues();
 
-        objContentValues.put(objMySQLiteOpenHelper.or_id, order_ID);
-        objContentValues.put(objMySQLiteOpenHelper.or_Name, order_MENU);
-        objContentValues.put(objMySQLiteOpenHelper.or_detel, or_Detel);
-        objContentValues.put(objMySQLiteOpenHelper.or_long, or_Long);
-        objContentValues.put(objMySQLiteOpenHelper.or_lat, or_Lat);
-        objContentValues.put(objMySQLiteOpenHelper.or_image, or_Image);
-        objContentValues.put(objMySQLiteOpenHelper.or_price, or_price);
+        objContentValues.put(objMySQLiteOpenHelper.or_name, or_name);
+        objContentValues.put(objMySQLiteOpenHelper.or_detel, or_detel);
+//        objContentValues.put(objMySQLiteOpenHelper.or_long, or_long);
+//        objContentValues.put(objMySQLiteOpenHelper.or_lat, or_lat);
+//        objContentValues.put(objMySQLiteOpenHelper.or_image, or_Image);
+//        objContentValues.put(objMySQLiteOpenHelper.or_price, or_price);
 
         return readSqLiteDatabase.insert(objMySQLiteOpenHelper.ordertable, null, objContentValues);
     }

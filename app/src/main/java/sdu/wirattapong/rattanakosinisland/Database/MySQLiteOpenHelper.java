@@ -26,17 +26,15 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
 //    public String CREATE_MEMBER_TABLE ="create table "+membertable+" ("+UserID+" integer primary key," + " "+USERName+" text, "+PASSWord+" text, "+Status+" text);";
 
     public static final String ordertable = "ordertable";
-    public static final String or_id = "id_order";
-    public static final String or_Name = "name_order";
-    public static final String or_detel = "detail_order";
-    public static final String or_long= "long_order";
-    public static final String or_lat = "lat_order";
-    public static final String or_image = "image_order";
-    public static final String or_price = "price_order";
-    public static final String tor_id = "id_type";
-    public static final String or_type = "or_type";
+    public static final String or_id = "or_id";
+    public static final String or_name = "or_name";
+    public static final String or_detel = "or_detel";
+    public static final String or_long= "or_long";
+    public static final String or_lat = "or_lat";
+    public static final String or_image = "or_image";
+    public static final String or_price = "or_price";
     private static final String CREATE_MENU_TABLE = "create table "+ordertable+" ("+or_id+" integer primary key," +
-            " "+or_Name+" text,"+or_detel+" text, "+or_long+" text, "+or_lat+" text, "+or_image+" text,"+or_price+" text,"+tor_id+"text,"+or_type+"text);";
+            " "+or_name+" text,"+or_detel+" text, "+or_long+" text, "+or_lat+" text, "+or_image+" text,"+or_price+" text);";
 
     public static final String traveltable = "traveltable";
     public static final String tvl_ID = "tvl_ID";
@@ -46,9 +44,9 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
     public static final String tvl_Image = "tvl_Image";
     public static final String tvl_lat = "tvl_lat";
     public static final String tvl_long = "tvl_long";
-    public static final String time_edit = "time_edit";
     private static final String CREATE_ORDER_TABLE = "create table "+traveltable+" ("+tvl_ID+" integer primary key," +
-            " "+tvl_Travel+" text,"+tvl_Source+" text, "+tvl_opentime+" text, "+tvl_Image+" text, "+tvl_lat+" text,"+tvl_long+"text,"+time_edit+"text);";
+            " "+tvl_Travel+" text,"+tvl_Source+" text, "+tvl_opentime+" text, "+tvl_Image+" text, "+tvl_lat+" text,"+tvl_long+" text);";
+
     public MySQLiteOpenHelper(Context context) {
         super(context, DataBase_Name, null, DataBase_Version);
     }
@@ -65,7 +63,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
-        String DROP_MEMBER_TABLE = "DROP TABLE IF EXISTS " + ordertable;
+        String DROP_MEMBER_TABLE = "DROP TABLE IF EXISTS " + traveltable;
 
         db.execSQL(DROP_MEMBER_TABLE);
 

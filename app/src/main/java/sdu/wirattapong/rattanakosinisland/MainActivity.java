@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Cdatabase();
-
+        //addtest();
         deleteAllData();
 
         synJSONtoSQLite();
@@ -52,24 +52,24 @@ public class MainActivity extends AppCompatActivity {
 
         //Loop 2 Time
         int intTimes = 0;
-        while(intTimes <= 4){
+        while(intTimes <= 1){
 
             //Variable and Constant
             InputStream objInputStream = null;
             String strJSON = null;
-            String strTravelTabel = "http://5711020660016.sci.dusit.ac.th/traveltable.php";
             String strOrderURL = "http://5711020660016.sci.dusit.ac.th/ordertable.php";
+            String strTravelTabel = "http://5711020660016.sci.dusit.ac.th/traveltable.php";
             HttpPost objHttpPost = null;
 
             //1.Create InputStream
             try{
                 HttpClient objHttpClient = new DefaultHttpClient();
                 switch (intTimes){
-                    case 3:
-                        objHttpPost = new HttpPost(strTravelTabel);
+                    case 0:
+                        objHttpPost = new HttpPost(strOrderURL);
                         break;
                     default:
-                        objHttpPost = new HttpPost(strOrderURL);
+                        objHttpPost = new HttpPost(strTravelTabel);
                         break;
                 }
                 HttpResponse objHttpResponse = objHttpClient.execute(objHttpPost);
@@ -100,14 +100,9 @@ public class MainActivity extends AppCompatActivity {
                     switch (intTimes){
                         case 0:
                             //update OrberTable
-                            String order_ID = jsonObject.getString("or_id");
-                            String order_MENU = jsonObject.getString("order_MENU");
-                            String or_Detel = jsonObject.getString("or_Detel");
-                            String or_Long = jsonObject.getString("or_Long");
-                            String or_Lat = jsonObject.getString("or_Lat");
-                            String or_Image = jsonObject.getString("or_Image");
-                            String or_price = jsonObject.getString("or_price");
-                            objOrberTable.AddNewOrderTable(order_ID,order_MENU,or_Detel,or_Long,or_Lat,or_Image,or_price);
+                            String or_name = jsonObject.getString("or_name");
+                            String or_detel = jsonObject.getString("or_detel");
+                            objOrberTable.AddNewOrderTable(or_name,or_detel);
                             break;
                         default:
                             //update MenuTable
@@ -118,26 +113,8 @@ public class MainActivity extends AppCompatActivity {
                             String tvl_Image = jsonObject.getString("tvl_Image");
                             String tvl_lat = jsonObject.getString("tvl_lat");
                             String tvl_long = jsonObject.getString("tvl_long");
-                            objTravelTabel.AddNewOrderTable(tvl_ID,tvl_Travel,tvl_Source,tvl_opentime,tvl_Image,tvl_lat,tvl_long);
+                            objTravelTabel.AddNewOrderTable(tvl_Travel,tvl_Source,tvl_opentime,tvl_Image,tvl_lat,tvl_long);
                             break;
-//                        case 2:
-//                            //update OrderTable
-//                            String id_member = jsonObject.getString("id_member");
-//                            String id_menu = jsonObject.getString("id_menu");
-//                            String date_order = jsonObject.getString("date_order");
-//                            String price_order = jsonObject.getString("price_order");
-//                            String status = jsonObject.getString("status");
-//                            objOrderTable.AddNewOrderTable(id_member,id_menu,date_order,price_order,status);
-//                            break;
-//
-//                        default:
-//                            //update OrderListTable
-//                            String id_order = jsonObject.getString("id_order");
-//                            String id_menulist = jsonObject.getString("id_menu");
-//                            String amount = jsonObject.getString("amount");
-//                            String total = jsonObject.getString("Price");
-//                            objOrderListTable.AddNewOrderListTable(id_order,id_menulist,amount,total);
-//                            break;
                     }
                 }
             }catch (Exception e){
@@ -152,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
         objOrberTable = new OrberTable(this);
         objTravelTabel = new TravelTabel(this);
     }
+
 
 
     public void onClickTour (View view) {
