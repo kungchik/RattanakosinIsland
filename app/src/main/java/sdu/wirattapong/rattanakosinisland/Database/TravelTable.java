@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteDatabase;
  * Created by SaNoMan on 14/8/2560.
  */
 
-public class TravelTabel {
+public class TravelTable {
     private MySQLiteOpenHelper objMySQLiteOpenHelper;
     private SQLiteDatabase writeSqLiteDatabase;
     private SQLiteDatabase readSqLiteDatabase;
@@ -24,12 +24,12 @@ public class TravelTabel {
     public static final String tvl_long = "tvl_long";
   //  public static final String time_edit = "time_edit";
 
-    public TravelTabel(Context context) {
+    public TravelTable(Context context) {
         objMySQLiteOpenHelper = new MySQLiteOpenHelper(context);
         writeSqLiteDatabase = objMySQLiteOpenHelper.getWritableDatabase();
         readSqLiteDatabase = objMySQLiteOpenHelper.getReadableDatabase();
     }
-    public long AddNewOrderTable(String tvl_Travel, String tvl_Source,String tvl_opentime,String tvl_Image,String tvl_lat,String tvl_long) {
+    public long AddNewTravelTable(String tvl_Travel,String tvl_Source,String tvl_opentime,String tvl_Image,String tvl_lat,String tvl_long) {
         ContentValues objContentValues = new ContentValues();
 
         objContentValues.put(objMySQLiteOpenHelper.tvl_Travel, tvl_Travel);
@@ -39,7 +39,7 @@ public class TravelTabel {
         objContentValues.put(objMySQLiteOpenHelper.tvl_lat, tvl_lat);
         objContentValues.put(objMySQLiteOpenHelper.tvl_long, tvl_long);
 
-        return readSqLiteDatabase.insert(objMySQLiteOpenHelper.ordertable, null, objContentValues);
+        return readSqLiteDatabase.insert(objMySQLiteOpenHelper.traveltable, null, objContentValues);
     }
 
     public String[] readALLTravelTable(int intColume){

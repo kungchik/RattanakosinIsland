@@ -20,9 +20,10 @@ public class Detail extends AppCompatActivity {
 
 
         //รับข้อมูลจาก Main Activity มาแสดงผลบน Detail
-        titleTextView.setText(getIntent().getStringExtra("Title"));
-        DetailTextView.setText(getIntent().getStringExtra("Detail"));
-        imageView.setImageResource(getIntent().getIntExtra("Image",R.drawable.img_1));
+        titleTextView.setText(getIntent().getStringExtra("name"));
+        DetailTextView.setText(getIntent().getStringExtra("detel"));
+        String image = getIntent().getStringExtra("image");
+        //   Picasso.with(Detailtour.this).load(image).into(imageView);
 
 
 

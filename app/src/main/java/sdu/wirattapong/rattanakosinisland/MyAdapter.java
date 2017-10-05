@@ -16,11 +16,11 @@ import com.squareup.picasso.Picasso;
 
 public class MyAdapter extends BaseAdapter{
 
-    private Context objcontextcake;
+    private Context objcontext;
     private String[] name,detel,image;
     //Explicit
     public MyAdapter(Context context,String[] name, String[] detel, String[] image) {
-        this.objcontextcake = context;
+        this.objcontext = context;
         this.name = name;
         this.detel = detel;
         this.image = image;
@@ -44,14 +44,14 @@ public class MyAdapter extends BaseAdapter{
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        LayoutInflater objLayoutInflater = (LayoutInflater) objcontextcake.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        LayoutInflater objLayoutInflater = (LayoutInflater) objcontext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = objLayoutInflater.inflate(R.layout.my_listview,parent,false);
 
         TextView TravelTextView = (TextView) view.findViewById(R.id.txtTitleTour);
         TextView Traveldetel = (TextView) view.findViewById(R.id.txtDetailTour);
         ImageView TravelImage = (ImageView) view.findViewById(R.id.imvIconTravel);
 
-        Picasso.with(objcontextcake).load(image[position]).into(TravelImage);
+        //Picasso.with(objcontext).load(image[position]).into(TravelImage);
         TravelTextView.setText(name[position]);
         Traveldetel.setText(detel[position]);
         return view;

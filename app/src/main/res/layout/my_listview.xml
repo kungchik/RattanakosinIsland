@@ -9,7 +9,6 @@
         android:id="@+id/imvIconTravel"
         android:layout_width="201dp"
         android:layout_height="116dp"
-        app:srcCompat="@drawable/img1"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp" />
 

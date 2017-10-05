@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+//import com.example.wirattapong.test.DataBase.MenuTable;
 
 /**
  * Created by khowoatt on 17/7/2560.
@@ -28,15 +29,15 @@ import android.database.sqlite.SQLiteDatabase;
         readSqLiteDatabase = objMySQLiteOpenHelper.getReadableDatabase();
     }
 
-    public long AddNewOrderTable(String or_name,String or_detel) {
+    public long AddNewOrderTable(String or_name,String or_detel,String or_long,String or_lat,String or_image,String or_price) {
         ContentValues objContentValues = new ContentValues();
 
         objContentValues.put(objMySQLiteOpenHelper.or_name, or_name);
         objContentValues.put(objMySQLiteOpenHelper.or_detel, or_detel);
-//        objContentValues.put(objMySQLiteOpenHelper.or_long, or_long);
-//        objContentValues.put(objMySQLiteOpenHelper.or_lat, or_lat);
-//        objContentValues.put(objMySQLiteOpenHelper.or_image, or_Image);
-//        objContentValues.put(objMySQLiteOpenHelper.or_price, or_price);
+        objContentValues.put(objMySQLiteOpenHelper.or_long, or_long);
+        objContentValues.put(objMySQLiteOpenHelper.or_lat, or_lat);
+        objContentValues.put(objMySQLiteOpenHelper.or_image, or_image);
+        objContentValues.put(objMySQLiteOpenHelper.or_price, or_price);
 
         return readSqLiteDatabase.insert(objMySQLiteOpenHelper.ordertable, null, objContentValues);
     }

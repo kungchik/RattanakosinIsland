@@ -9,7 +9,7 @@ import android.util.Log;
 import android.view.View;
 
 import sdu.wirattapong.rattanakosinisland.Database.OrberTable;
-import sdu.wirattapong.rattanakosinisland.Database.TravelTabel;
+import sdu.wirattapong.rattanakosinisland.Database.TravelTable;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -25,7 +25,7 @@ import java.io.InputStreamReader;
 
 public class MainActivity extends AppCompatActivity {
     private OrberTable objOrberTable;
-    private TravelTabel objTravelTabel;
+    private TravelTable objTravelTable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
             InputStream objInputStream = null;
             String strJSON = null;
             String strOrderURL = "http://5711020660016.sci.dusit.ac.th/ordertable.php";
-            String strTravelTabel = "http://5711020660016.sci.dusit.ac.th/traveltable.php";
+            String strTravelTable = "http://5711020660016.sci.dusit.ac.th/traveltable.php";
             HttpPost objHttpPost = null;
 
             //1.Create InputStream
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
                         objHttpPost = new HttpPost(strOrderURL);
                         break;
                     default:
-                        objHttpPost = new HttpPost(strTravelTabel);
+                        objHttpPost = new HttpPost(strTravelTable);
                         break;
                 }
                 HttpResponse objHttpResponse = objHttpClient.execute(objHttpPost);
@@ -102,19 +102,24 @@ public class MainActivity extends AppCompatActivity {
                             //update OrberTable
                             String or_name = jsonObject.getString("or_name");
                             String or_detel = jsonObject.getString("or_detel");
-                            objOrberTable.AddNewOrderTable(or_name,or_detel);
+                            String or_long = jsonObject.getString("or_long");
+                            String or_lat = jsonObject.getString("or_lat");
+                            String or_image = jsonObject.getString("or_image");
+                            String or_price = jsonObject.getString("or_price");
+                            objOrberTable.AddNewOrderTable(or_name,or_detel,or_long,or_lat,or_image,or_price);
                             break;
                         default:
                             //update MenuTable
-                            String tvl_ID = jsonObject.getString("tvl_ID");
-                            String tvl_Travel = jsonObject.getString("tvl_Travel");
+                            //String tvl_ID = jsonObject.getString("tvl_ID");
+                              String tvl_Travel = jsonObject.getString("tvl_Travel");
                             String tvl_Source = jsonObject.getString("tvl_Source");
                             String tvl_opentime = jsonObject.getString("tvl_opentime");
                             String tvl_Image = jsonObject.getString("tvl_Image");
                             String tvl_lat = jsonObject.getString("tvl_lat");
                             String tvl_long = jsonObject.getString("tvl_long");
-                            objTravelTabel.AddNewOrderTable(tvl_Travel,tvl_Source,tvl_opentime,tvl_Image,tvl_lat,tvl_long);
+                            objTravelTable.AddNewTravelTable(tvl_Travel,tvl_Source,tvl_opentime,tvl_Image,tvl_lat,tvl_long);
                             break;
+
                     }
                 }
             }catch (Exception e){
@@ -127,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void Cdatabase() {//open database
         objOrberTable = new OrberTable(this);
-        objTravelTabel = new TravelTabel(this);
+        objTravelTable = new TravelTable(this);
     }
 
 
