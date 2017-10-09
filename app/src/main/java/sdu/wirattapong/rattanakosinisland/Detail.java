@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 public class Detail extends AppCompatActivity {
 
     @Override
@@ -23,7 +25,7 @@ public class Detail extends AppCompatActivity {
         titleTextView.setText(getIntent().getStringExtra("name"));
         DetailTextView.setText(getIntent().getStringExtra("detel"));
         String image = getIntent().getStringExtra("image");
-        //   Picasso.with(Detailtour.this).load(image).into(imageView);
+        Glide.with(Detail.this).load(image).into(imageView);
 
 
 

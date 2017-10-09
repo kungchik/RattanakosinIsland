@@ -48,12 +48,9 @@ public class TravelTable {
             Cursor objCursor = readSqLiteDatabase.query(traveltable, new String[]{tvl_ID,tvl_Travel,tvl_Source,tvl_opentime,tvl_Image,tvl_lat,tvl_long},null,null,null,null,null,null);
             if(objCursor != null){
                 if(objCursor.moveToFirst()){
-                    strResult = new String[10];
-                    // strResult[0] = objCursor.getString(0);
-                    // strResult[1] = objCursor.getString(1);
-                    // strResult[2] = objCursor.getString(2);
-                    // strResult[3] = objCursor.getString(3);
-                    for(int i =0;i<10;i++){
+                    int num = objCursor.getCount();
+                    strResult = new String[num];
+                    for(int i =0;i<num;i++){
                         strResult[i] = objCursor.getString(intColume);
                         objCursor.moveToNext();
                     }

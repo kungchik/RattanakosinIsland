@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.squareup.picasso.Picasso;
 
 /**
@@ -29,8 +30,7 @@ public class MyAdapter extends BaseAdapter{
     }
 
     @Override
-    public int getCount() {return name.length;
-    }
+    public int getCount() {return name.length;}
 
     @Override
     public Object getItem(int position) {
@@ -51,7 +51,7 @@ public class MyAdapter extends BaseAdapter{
         TextView Traveldetel = (TextView) view.findViewById(R.id.txtDetailTour);
         ImageView TravelImage = (ImageView) view.findViewById(R.id.imvIconTravel);
 
-        //Picasso.with(objcontext).load(image[position]).into(TravelImage);
+        Glide.with(objcontext).load(image[position]).into(TravelImage);
         TravelTextView.setText(name[position]);
         Traveldetel.setText(detel[position]);
         return view;
